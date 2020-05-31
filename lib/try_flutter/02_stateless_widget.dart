@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -9,10 +8,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-//      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("My Counter"),
+          title: Text("Hello Flutter"),
         ),
         body: ZLHomePage(),
       ),
@@ -20,16 +18,21 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
 class ZLHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MyHomeBody();
+    return Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Checkbox(value: false, onChanged: (value) {
+              print(value);
+            },),
+            Text("Agree", style: TextStyle(fontSize: 20),),
+          ],
+        )
+    );
   }
-}
 
-class MyHomeBody extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Text("Hello Flutter");
-  }
 }
