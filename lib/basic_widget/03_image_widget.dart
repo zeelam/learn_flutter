@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main(List<String> args) {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
 //      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("CircleAvatar"),
+          title: Text("Image"),
         ),
         body: ZLHomePage(),
       ),
@@ -29,27 +30,27 @@ class ZLHomePage extends StatelessWidget {
 class MyHomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(10),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          TextField(
-            decoration: InputDecoration(
-              icon: Icon(Icons.person),
-              labelText: "username",
-              hintText: "your username",
-            ),
-            onChanged: (value){
-              print("textField change: $value");
-            },
-            onSubmitted: (value){
-              print("submit: $value");
-            },
-          )
-        ],
-      ),
-    );
+    return Image.asset("assets/images/flutter.jpg");
   }
 }
 
+class NetworkImageWidgetDemo extends StatelessWidget {
+  const NetworkImageWidgetDemo({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 300,
+      height: 300,
+      child: Image.network(
+        "http://img0.dili360.com/ga/M01/48/3C/wKgBy1kj49qAMVd7ADKmuZ9jug8377.tub.jpg",
+        fit: BoxFit.contain,
+        alignment: Alignment.center,
+        repeat: ImageRepeat.repeat,
+      ),
+      color: Colors.red,
+    );
+  }
+}

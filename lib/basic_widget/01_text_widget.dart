@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
 //      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("My Counter"),
+          title: Text("Text Widget"),
         ),
         body: ZLHomePage(),
       ),
